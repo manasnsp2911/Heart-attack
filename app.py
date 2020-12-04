@@ -19,6 +19,10 @@ def predict():
     prediction = model.predict(final_features)
 
     output = prediction[0]
+    if output==1:
+        output='high'
+    else:
+        output='low'
         
 
     return render_template('index.html', prediction_text='Heart attack probability should be {}'.format(output))
